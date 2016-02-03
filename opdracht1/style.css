@@ -1,0 +1,330 @@
+@font-face {
+	font-family:Ampersand;
+	src:local('Baskerville'),
+	local('Goudy Old Style'),
+	local('Palatino'),
+	local('Book Antiqua');
+	unicode-range:U+26;
+	font-style: italic;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin:0;
+	padding:0;
+	font-family: Ampersand, sans-serif;
+	background-color: #F7F7F7;
+}
+
+button {
+	background: #0B486B;
+	color: white;
+	border: 1px solid white;
+	padding: 10px;
+}
+
+/* HEADER */
+body > header {
+	float: left;
+	width:20%;
+	background-color: #3B8686;
+	color: white;
+	padding: 10px;
+	position: relative;
+	z-index: 3;
+	-webkit-transition: margin ease-out 0.7s;
+    -moz-transition: margin ease-out 0.7s;
+    -o-transition: margin ease-out 0.7s;
+    transition: margin ease-out 0.7s;
+}
+
+body > header > h1 {
+	font-size: 1.4em;
+	text-align: center;
+}
+
+body > header > p {
+	text-align: center;
+}
+
+body > header > figure > img {
+	width: 100%;
+	border-radius: 100px;
+	border: 2px solid #0B486B;
+}
+
+body > header > nav ul {
+	padding: 0;
+	margin-top: 30px;
+}
+
+body > header > nav ul li {
+	list-style-type: none;
+	border-bottom: 1px solid #0B486B;
+	height: 40px;
+	padding-left: 5px;
+	font-size: 0.9em;
+}
+
+body > header > nav ul li a {
+	text-decoration: none;
+	color: white;
+	padding-top: 11px;
+	display: block;
+}
+
+body > header > nav ul li:hover {
+	background-color: #0B486B;
+}
+
+body > header > nav ul li:hover svg {
+	fill: white;
+}
+
+body > header > nav svg {
+	width: 17px;
+	height: 17px;
+	fill: #0B486B;
+	margin-right: 7px
+}
+
+/* MAIN */
+main {
+	float: left;
+	width: 80%;
+	background-color: #A8DBA8;
+	-webkit-transition: margin ease-out 0.7s;
+    -moz-transition: margin ease-out 0.7s;
+    -o-transition: margin ease-out 0.7s;
+    transition: margin ease-out 0.7s;
+}
+
+main > article > header > h1 > span {
+	font-size: 0.6em;
+}
+
+main h2 {
+	color: #0B486B;
+	font-size: 1.3em;
+}
+
+article {
+	padding: 10px 20px 10px 20px;
+}
+
+article:nth-of-type(even) {
+	background-color: #2D3838;
+	color: white;
+}
+
+article:nth-of-type(even) h2 {
+	color: white;
+}
+
+article:nth-of-type(odd) {
+	background-color: #F7F7F7;
+}
+
+article > form  > fieldset {
+	border: none;
+}
+
+article > form  > fieldset > label {
+	display: block;
+	margin-top: 10px;
+}
+
+article > form  > fieldset > label > input {
+	background: none;
+	border: none;
+	border-bottom: 1px solid white;
+	outline:none;
+	color: white;
+}
+
+article > form  > fieldset > label > span {
+	font-size: 0.8em;
+}
+
+article > form  > fieldset > button {
+	margin-top: 20px;
+}
+
+#photo-albums {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+#photo-albums > header {
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+#photo-albums figure {
+	-webkit-box-flex: 50%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 50%;         /* OLD - Firefox 19- */
+	width: 50%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 50%;          /* Chrome */
+	-ms-flex: 50%;              /* IE 10 */
+	flex: 50%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	margin:0;
+	position: relative;
+}
+
+#photo-albums figure img {
+	width: 100%;
+}
+
+#photo-albums figure figcaption {
+	text-align: center;
+}
+
+#photo-albums figure svg {
+	width: 16%;
+	height: 21%;
+	margin: auto;
+	position: absolute;
+	top: 0; 
+	left: 0; 
+	bottom: 0; 
+	right: 0;
+	background-color: rgba(255,255,255,0.5);
+	padding: 3%;
+	border-radius: 70px;
+}
+
+
+/* FOOTER */
+
+footer {
+	clear: both;
+	background: #3B8686;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+
+	justify-content: space-around;
+	-webkit-justify-content: space-around;
+
+	border-top: 6px solid #0B486B;
+}
+
+footer ul {
+	padding-left: 0px;
+}
+
+footer ul li {
+	list-style-type: none;
+}
+
+footer ul li a {
+	text-decoration: none;
+	color:white;
+}
+
+footer address pre {
+	white-space: pre-line;
+}
+
+/* HAMBURGER */
+body > input[type="checkbox"] {
+	display: none;
+}
+
+body > label {
+	display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 2px;
+    z-index: 4;
+    display: none;
+    -webkit-transition: margin ease-out 0.7s;
+    -moz-transition: margin ease-out 0.7s;
+    -o-transition: margin ease-out 0.7s;
+    transition: margin ease-out 0.7s;
+}
+
+body > label span {
+	height: 3px;
+	width: 30px;
+	display: block;
+	margin-top: 5px;
+	background-color: #0B486B;
+	margin-left: 5px;
+}
+
+body > label:before {
+    display: inline-block;
+}
+
+body > input[type=checkbox]:checked  + header {
+	margin-left: 0px;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 850px) {
+	body > label {
+		display: block;
+	}
+
+	body > header {
+		width: 175px;
+		margin-left: -175px;
+		position: absolute;
+	}
+
+	main {
+		width: 100%;
+	}
+}
+
+@media (max-width: 450px) {
+	article > form  > fieldset > label > span {
+		display: block;
+	}
+
+	#photo-albums figure {
+		-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+		-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+		width: 100%;               /* For old syntax, otherwise collapses. */
+		-webkit-flex: 100%;          /* Chrome */
+		-ms-flex: 100%;              /* IE 10 */
+		flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+		margin-bottom: 20px;
+	}
+
+	footer {
+		-webkit-flex-flow: row wrap;
+		flex-flow: column wrap;
+		padding: 10px 0px 10px 0px;
+	}
+
+	footer nav,
+	footer address,
+	footer ul  {
+		width: 200px;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+}
