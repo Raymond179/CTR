@@ -50,12 +50,12 @@ body > header {
     -o-transition: margin ease-out 0.7s;
     transition: margin ease-out 0.7s;
 
-    -webkit-box-flex: 20%;      /* OLD - iOS 6-, Safari 3.1-6 */
-	-moz-box-flex: 20%;         /* OLD - Firefox 19- */
-	width: 20%;               /* For old syntax, otherwise collapses. */
-	-webkit-flex: 20%;          /* Chrome */
-	-ms-flex: 20%;              /* IE 10 */
-	flex: 20%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-flex: 17%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 17%;         /* OLD - Firefox 19- */
+	width: 17%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 17%;          /* Chrome */
+	-ms-flex: 17%;              /* IE 10 */
+	flex: 17%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
 body > header > h1 {
@@ -71,6 +71,11 @@ body > header > figure {
 	margin: 0;
 }
 
+body > header > p > em{
+	color: #0B486B;
+	font-weight: bold;
+}
+
 body > header > figure > img {
 	width: 70%;
 	min-width: 110px;
@@ -78,6 +83,15 @@ body > header > figure > img {
 	margin: 0 auto;
 	border-radius: 100px;
 	border: 2px solid #0B486B;
+
+	-webkit-transition: border 0.2s;
+    -moz-transition: border 0.2s;
+    -o-transition: border 0.2s;
+    transition: border 0.2s;
+}
+
+body > header > figure > img:hover {
+	border: 8px solid #0B486B;
 }
 
 body > header > nav ul {
@@ -91,6 +105,12 @@ body > header > nav ul li {
 	height: 40px;
 	padding-left: 5px;
 	font-size: 0.9em;
+
+	-webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    transition: background 0.2s;
+
 }
 
 body > header > nav ul li a {
@@ -160,6 +180,10 @@ article:nth-of-type(odd) {
 
 article > form  > fieldset {
 	border: none;
+}
+
+article > form > fieldset > legend {
+	color: white;
 }
 
 article > form  > fieldset > label {
@@ -238,10 +262,10 @@ article > form  > fieldset > button {
 	border-radius: 70px;
 }
 
-
 /* FOOTER */
 
 footer {
+	height: 220px;
 	clear: both;
 	background: #3B8686;
 	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -264,10 +288,17 @@ footer {
 	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 
 	border-top: 6px solid #0B486B;
+
+	align-items: center;
 }
 
 footer ul {
 	padding-left: 0px;
+	margin:auto;
+}
+
+footer > nav {
+	margin: auto;
 }
 
 footer ul li {
@@ -278,6 +309,10 @@ footer ul li {
 footer ul li a {
 	text-decoration: none;
 	color: white;
+}
+
+footer address {
+	margin:auto;
 }
 
 footer address pre {
@@ -357,6 +392,7 @@ body > input[type=checkbox]:checked  + header {
 		-webkit-flex-flow: row wrap;
 		flex-flow: column wrap;
 		padding: 10px 0px 10px 0px;
+		height: auto;
 	}
 
 	footer nav,
