@@ -1,2 +1,3 @@
 # CSS-to-the-Rescue
-HTML voor de CSS to the Rescue opdracht
+Opdracht 1:
+http://raymondkorrel.nl/ctr/
