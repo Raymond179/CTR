@@ -16,21 +16,31 @@ body {
 	margin:0;
 	padding:0;
 	font-family: Ampersand, sans-serif;
-	background-color: #F7F7F7;
+	background: #F7F7F7;
+
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
 }
 
 button {
 	background: #0B486B;
 	color: white;
 	border: 1px solid white;
-	padding: 10px;
+	padding: 0.8em;
+	line-height: 1.5;
+	font-size: 0.8em;
 }
 
 /* HEADER */
 body > header {
-	float: left;
 	width:20%;
-	background-color: #3B8686;
+	background: #3B8686;
 	color: white;
 	padding: 10px;
 	position: relative;
@@ -39,6 +49,13 @@ body > header {
     -moz-transition: margin ease-out 0.7s;
     -o-transition: margin ease-out 0.7s;
     transition: margin ease-out 0.7s;
+
+    -webkit-box-flex: 20%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 20%;         /* OLD - Firefox 19- */
+	width: 20%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 20%;          /* Chrome */
+	-ms-flex: 20%;              /* IE 10 */
+	flex: 20%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
 body > header > h1 {
@@ -50,8 +67,15 @@ body > header > p {
 	text-align: center;
 }
 
+body > header > figure {
+	margin: 0;
+}
+
 body > header > figure > img {
-	width: 100%;
+	width: 70%;
+	min-width: 110px;
+	display: block;
+	margin: 0 auto;
 	border-radius: 100px;
 	border: 2px solid #0B486B;
 }
@@ -71,13 +95,13 @@ body > header > nav ul li {
 
 body > header > nav ul li a {
 	text-decoration: none;
-	color: white;
+	color: currentColor;
 	padding-top: 11px;
 	display: block;
 }
 
 body > header > nav ul li:hover {
-	background-color: #0B486B;
+	background: #0B486B;
 }
 
 body > header > nav ul li:hover svg {
@@ -93,13 +117,19 @@ body > header > nav svg {
 
 /* MAIN */
 main {
-	float: left;
 	width: 80%;
-	background-color: #A8DBA8;
+	background: #A8DBA8;
 	-webkit-transition: margin ease-out 0.7s;
     -moz-transition: margin ease-out 0.7s;
     -o-transition: margin ease-out 0.7s;
     transition: margin ease-out 0.7s;
+
+    -webkit-box-flex: 80%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 80%;         /* OLD - Firefox 19- */
+	width: 80%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 80%;          /* Chrome */
+	-ms-flex: 80%;              /* IE 10 */
+	flex: 80%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
 main > article > header > h1 > span {
@@ -116,7 +146,7 @@ article {
 }
 
 article:nth-of-type(even) {
-	background-color: #2D3838;
+	background: #2D3838;
 	color: white;
 }
 
@@ -125,7 +155,7 @@ article:nth-of-type(even) h2 {
 }
 
 article:nth-of-type(odd) {
-	background-color: #F7F7F7;
+	background: #F7F7F7;
 }
 
 article > form  > fieldset {
@@ -181,7 +211,8 @@ article > form  > fieldset > button {
 	-ms-flex: 50%;              /* IE 10 */
 	flex: 50%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 
-	margin:0;
+	margin:auto;
+	width:min-content;
 	position: relative;
 }
 
@@ -202,7 +233,7 @@ article > form  > fieldset > button {
 	left: 0; 
 	bottom: 0; 
 	right: 0;
-	background-color: rgba(255,255,255,0.5);
+	background: rgba(255,255,255,0.5);
 	padding: 3%;
 	border-radius: 70px;
 }
@@ -225,6 +256,13 @@ footer {
 	justify-content: space-around;
 	-webkit-justify-content: space-around;
 
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
 	border-top: 6px solid #0B486B;
 }
 
@@ -234,11 +272,12 @@ footer ul {
 
 footer ul li {
 	list-style-type: none;
+	margin-top: 5px;
 }
 
 footer ul li a {
 	text-decoration: none;
-	color:white;
+	color: white;
 }
 
 footer address pre {
@@ -268,7 +307,7 @@ body > label span {
 	width: 30px;
 	display: block;
 	margin-top: 5px;
-	background-color: #0B486B;
+	background: #0B486B;
 	margin-left: 5px;
 }
 
