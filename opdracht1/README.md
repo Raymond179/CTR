@@ -1,6 +1,6 @@
 # CSS-to-the-Rescue
 Opdracht 1:
-http://raymondkorrel.nl/ctr/
+http://raymondkorrel.github.io/CTR/opdracht1/
 
 Shortlink:
-http://ow.ly/XYzgG
+http://ow.ly/XZP9o
