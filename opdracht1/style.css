@@ -28,13 +28,16 @@ body {
 	flex-flow: row wrap;
 }
 
-button {
+button,
+a[role="button"] {
 	background: #0B486B;
 	color: white;
 	border: 1px solid white;
 	padding: 0.8em;
 	line-height: 1.5;
 	font-size: 0.8em;
+	display: inline-block;
+	text-decoration: none;
 }
 
 /* HEADER */
@@ -42,7 +45,7 @@ body > header {
 	width:20%;
 	background: #3B8686;
 	color: white;
-	padding: 10px;
+	padding: 1em;
 	position: relative;
 	z-index: 3;
 	-webkit-transition: margin ease-out 0.7s;
@@ -78,7 +81,7 @@ body > header > p > em{
 
 body > header > figure > img {
 	width: 70%;
-	min-width: 110px;
+	min-width: 9em;
 	display: block;
 	margin: 0 auto;
 	border-radius: 100px;
@@ -96,14 +99,14 @@ body > header > figure > img:hover {
 
 body > header > nav ul {
 	padding: 0;
-	margin-top: 30px;
+	margin-top: 2em;
 }
 
 body > header > nav ul li {
 	list-style-type: none;
 	border-bottom: 1px solid #0B486B;
 	height: 40px;
-	padding-left: 5px;
+	padding-left: 0.4em;
 	font-size: 0.9em;
 
 	-webkit-transition: background 0.2s;
@@ -116,7 +119,7 @@ body > header > nav ul li {
 body > header > nav ul li a {
 	text-decoration: none;
 	color: currentColor;
-	padding-top: 11px;
+	padding-top: 0.7em;
 	display: block;
 }
 
@@ -132,7 +135,7 @@ body > header > nav svg {
 	width: 17px;
 	height: 17px;
 	fill: #0B486B;
-	margin-right: 7px
+	margin-right: 0.4em;
 }
 
 /* MAIN */
@@ -152,7 +155,7 @@ main {
 	flex: 80%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
-main > article > header > h1 > span {
+article span {
 	font-size: 0.6em;
 }
 
@@ -162,7 +165,7 @@ main h2 {
 }
 
 article {
-	padding: 10px 20px 10px 20px;
+	padding: 1% 15% 1% 15%;
 }
 
 article:nth-of-type(even) {
@@ -174,29 +177,33 @@ article:nth-of-type(even) h2 {
 	color: white;
 }
 
-article:nth-of-type(odd) {
+article:nth-of-type(odd) legend,
+article:nth-of-type(odd) input, {
+	color: black;
+}
+
+article:nth-of-type(odd) input {
+	border-bottom: 1px solid black;
+}
+
+article:nth-of-type(odd)  {
 	background: #F7F7F7;
 }
 
-article > form  > fieldset {
+fieldset {
 	border: none;
 }
 
-article > form > fieldset > legend {
-	color: white;
-}
-
-article > form  > fieldset > label {
+form  > fieldset > label {
 	display: block;
 	margin-top: 10px;
 }
 
-article > form  > fieldset > label > input {
+article input {
 	background: none;
 	border: none;
 	border-bottom: 1px solid white;
 	outline:none;
-	color: white;
 }
 
 article > form  > fieldset > label > span {
@@ -262,6 +269,83 @@ article > form  > fieldset > button {
 	border-radius: 70px;
 }
 
+/* Profile picture */
+
+#profile-picture > div figure {
+	margin: 0;
+}
+
+#profile-picture > div img {
+	max-width: 200px;
+	width: 100%;
+	border-radius: 100px;
+
+}
+
+#profile-picture a[role="button"] {
+	margin-top:15px;
+}
+
+.filter-effects {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+.filter-effects header {
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.filter-effects > figure {
+	-webkit-box-flex: 20%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 20%;         /* OLD - Firefox 19- */
+	width: 20%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 20%;          /* Chrome */
+	-ms-flex: 20%;              /* IE 10 */
+	flex: 20%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	width: min-content;
+	margin: auto;
+	text-align: center;
+}
+
+.filter-effects > figure > img {
+	width: 100%;
+}
+
+.filter-effects img:hover {
+	-webkit-filter: none;
+}
+
+.effect-01 img {
+	-webkit-filter: brightness(1.2);
+}
+
+.effect-02 img {
+	-webkit-filter: contrast(1.4) sepia(1);
+}
+
+.effect-03 img {
+	-webkit-filter: saturate(0.2);
+}
+
+.effect-04 img {
+	-webkit-filter: saturate(1.8);
+}
+
+.effect-05 img {
+	-webkit-filter: brightness(1.2) contrast(1.5);
+}
+
 /* FOOTER */
 
 footer {
@@ -293,7 +377,7 @@ footer {
 }
 
 footer ul {
-	padding-left: 0px;
+	padding-left: 0;
 	margin:auto;
 }
 
@@ -354,9 +438,10 @@ body > input[type=checkbox]:checked  + header {
 	margin-left: 0px;
 }
 
+
 /* MEDIA QUERIES */
 
-@media (max-width: 850px) {
+@media (max-width: 60em) {
 	body > label {
 		display: block;
 	}
@@ -370,9 +455,13 @@ body > input[type=checkbox]:checked  + header {
 	main {
 		width: 100%;
 	}
+
+	article {
+		padding: 1% 5% 1% 5%;
+	}
 }
 
-@media (max-width: 450px) {
+@media (max-width: 35em) {
 	article > form  > fieldset > label > span {
 		display: block;
 	}
@@ -386,6 +475,10 @@ body > input[type=checkbox]:checked  + header {
 		flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 
 		margin-bottom: 20px;
+	}
+
+	.filter-effects > figure {
+		flex: 50%;
 	}
 
 	footer {
