@@ -346,6 +346,10 @@ article > form  > fieldset > button {
 	-webkit-filter: brightness(1.2) contrast(1.5);
 }
 
+:target h2{
+	text-decoration: underline;
+}
+
 /* FOOTER */
 
 footer {
