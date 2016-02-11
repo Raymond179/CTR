@@ -206,11 +206,11 @@ article input {
 	outline:none;
 }
 
-article > form  > fieldset > label > span {
+form[method='post'] > fieldset > label > span {
 	font-size: 0.8em;
 }
 
-article > form  > fieldset > button {
+form[method='post'] > fieldset > button {
 	margin-top: 20px;
 }
 
@@ -530,7 +530,7 @@ body > input[type=checkbox]:checked  + header {
 }
 
 @media (max-width: 35em) {
-	article > form  > fieldset > label > span {
+	form[method='post'] > fieldset > label > span {
 		display: block;
 	}
 
