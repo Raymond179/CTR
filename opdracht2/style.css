@@ -350,6 +350,7 @@ article > form  > fieldset > button {
 
 #photo-section {
 	display: none;
+	-webkit-flex-flow: row wrap;
 	flex-flow: row wrap;
 	position: fixed;
     top: 0;
@@ -366,11 +367,21 @@ article > form  > fieldset > button {
 }
 
 #photo-section:target {
-	display: flex;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
 a[role="close"] {
-	flex: 100%;
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	
     text-align: right;
     position: absolute;
     right: 10px;
@@ -380,7 +391,13 @@ a[role="close"] {
 }
 
 #photo-section figure {
-	flex: 100%;
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
     align-items: center;
     margin: auto;
     text-align: center;
