@@ -141,7 +141,6 @@ body > header > nav svg {
 /* MAIN */
 main {
 	width: 80%;
-	background: #A8DBA8;
 	-webkit-transition: margin ease-out 0.7s;
     -moz-transition: margin ease-out 0.7s;
     -o-transition: margin ease-out 0.7s;
@@ -468,40 +467,10 @@ footer address pre {
 }
 
 /* HAMBURGER */
-body > input[type="checkbox"] {
+a[href="#navigation"],
+a[href="#close"] {
 	display: none;
 }
-
-body > label {
-	display: inline-block;
-    cursor: pointer;
-    position: absolute;
-    margin-top: 2px;
-    z-index: 4;
-    display: none;
-    -webkit-transition: margin ease-out 0.7s;
-    -moz-transition: margin ease-out 0.7s;
-    -o-transition: margin ease-out 0.7s;
-    transition: margin ease-out 0.7s;
-}
-
-body > label span {
-	height: 3px;
-	width: 30px;
-	display: block;
-	margin-top: 5px;
-	background: #0B486B;
-	margin-left: 5px;
-}
-
-body > label:before {
-    display: inline-block;
-}
-
-body > input[type=checkbox]:checked  + header {
-	margin-left: 0px;
-}
-
 
 /* MEDIA QUERIES */
 
@@ -510,10 +479,72 @@ body > input[type=checkbox]:checked  + header {
 		display: block;
 	}
 
-	body > header {
-		width: 175px;
-		margin-left: -175px;
+	/* Hamburger */
+	a[href="#navigation"] {
+		display: block;
+	    text-decoration: none;
+	    color: black;
+	    margin-left: 10px;
+	    margin-top: 10px;
+	}
+
+	a[href="#navigation"] span{
+		width: 31px;
+		height: 3px;
+		background: black;
+		display: block;
+		margin-top: 6px;
+	}
+
+	/* Cross 
+	Source: http://codepen.io/brissmyr/pen/egidw/ 
+	*/
+	a[href="#close"] {
+		display: block;
+		text-decoration: none;
+    	width: 32px;
+		height: 32px;
+		width: 28px;
+    	height: 20px;
+	}
+
+	a[href="#close"]:before, a[href="#close"]:after {
 		position: absolute;
+		left: 15px;
+		content: '';
+		height: 25px;
+		width: 2px;
+		background: white;
+	}
+
+	a[href="#close"]:before {
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+	}
+
+	a[href="#close"]:after {
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+	}
+
+
+	body > header {
+		width: 175px; 
+		overflow: scroll;
+		position: fixed;
+		top: 0;
+		left: -175px;
+		height: 100%;
+		-webkit-transition: left 0.3s ease;
+		-moz-transition: left 0.3s ease;
+		-o-transition: left 0.3s ease;
+		transition: left 0.3s ease;
+	}
+
+	#navigation:target {
+		left:0;
 	}
 
 	main {
