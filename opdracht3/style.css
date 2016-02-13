@@ -1,0 +1,734 @@
+@font-face {
+	font-family:Ampersand;
+	src:local('Baskerville'),
+	local('Goudy Old Style'),
+	local('Palatino'),
+	local('Book Antiqua');
+	unicode-range:U+26;
+	font-style: italic;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin:0;
+	padding:0;
+	font-family: Ampersand, sans-serif, Helvetica, Arial;
+
+	background-image: 
+	linear-gradient(90deg, #F7F7F7 11px, transparent 0), 
+	linear-gradient(90deg, #E1E1E1 23px, transparent 0), 
+	linear-gradient(90deg, #EAEAEA 23px, transparent 0);
+	background-size: 73px 100%, 64px 100%, 28px 100%;
+
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+button,
+a[role="button"] {
+	background: #0B486B;
+	color: white;
+	border: 1px solid white;
+	padding: 0.8em;
+	line-height: 1.5;
+	font-size: 0.8em;
+	display: inline-block;
+	text-decoration: none;
+}
+
+
+:disabled, [disabled], [aria-disabled="true"] {
+	cursor: not-allowed;
+}
+
+/* HEADER */
+body > header {
+	width:20%;
+	background: #3B8686;
+	color: white;
+	padding: 1em;
+	position: relative;
+	z-index: 3;
+	-webkit-transition: margin ease-out 0.7s;
+    -moz-transition: margin ease-out 0.7s;
+    -o-transition: margin ease-out 0.7s;
+    transition: margin ease-out 0.7s;
+
+    -webkit-box-flex: 17%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 17%;         /* OLD - Firefox 19- */
+	width: 17%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 17%;          /* Chrome */
+	-ms-flex: 17%;              /* IE 10 */
+	flex: 17%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+body > header > h1 {
+	font-size: 1.4em;
+	text-align: center;
+}
+
+body > header > p {
+	text-align: center;
+}
+
+body > header > figure {
+	margin: 0;
+}
+
+body > header > p > em{
+	color: #0B486B;
+	font-weight: bold;
+}
+
+body > header > figure > img {
+	width: 70%;
+	min-width: 9em;
+	display: block;
+	margin: 0 auto;
+	border-radius: 100px;
+	border: 2px solid #0B486B;
+
+	-webkit-transition: border 0.2s;
+    -moz-transition: border 0.2s;
+    -o-transition: border 0.2s;
+    transition: border 0.2s;
+}
+
+body > header > figure > img:hover {
+	border: 8px solid #0B486B;
+}
+
+body > header > nav ul {
+	padding: 0;
+	margin-top: 2em;
+}
+
+body > header > nav ul li {
+	list-style-type: none;
+	border-bottom: 1px solid #0B486B;
+	height: 40px;
+	padding-left: 0.4em;
+	font-size: 0.9em;
+
+	-webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    transition: background 0.2s;
+
+}
+
+body > header > nav ul li a {
+	text-decoration: none;
+	color: currentColor;
+	padding-top: 0.7em;
+	display: block;
+}
+
+body > header > nav ul li:hover {
+	background: #0B486B;
+}
+
+body > header > nav ul li:hover svg {
+	fill: white;
+}
+
+body > header > nav svg {
+	width: 17px;
+	height: 17px;
+	fill: #0B486B;
+	margin-right: 0.4em;
+}
+
+/* MAIN */
+main {
+	width: 80%;
+	-webkit-transition: margin ease-out 0.7s;
+    -moz-transition: margin ease-out 0.7s;
+    -o-transition: margin ease-out 0.7s;
+    transition: margin ease-out 0.7s;
+
+    -webkit-box-flex: 80%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 80%;         /* OLD - Firefox 19- */
+	width: 80%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 80%;          /* Chrome */
+	-ms-flex: 80%;              /* IE 10 */
+	flex: 80%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+article span {
+	font-size: 0.6em;
+}
+
+main h2 {
+	color: #0B486B;
+	font-size: 1.3em;
+}
+
+article {
+	padding: 1% 15% 1% 15%;
+}
+
+article:nth-of-type(even) {
+	background: #2D3838;
+	color: white;
+}
+
+article:nth-of-type(even) h2 {
+	color: white;
+}
+
+article:nth-of-type(odd) legend,
+article:nth-of-type(odd) input, {
+	color: black;
+}
+
+article:nth-of-type(odd) input {
+	border-bottom: 1px solid black;
+}
+
+
+fieldset {
+	border: none;
+}
+
+form  > fieldset > label {
+	display: block;
+	margin-top: 10px;
+}
+
+article input {
+	background: none;
+	border: none;
+	border-bottom: 1px solid white;
+	outline:none;
+}
+
+form[method='post'] > fieldset > label > span {
+	font-size: 0.8em;
+}
+
+form[method='post'] > fieldset > button {
+	margin-top: 20px;
+}
+
+input[type="password"] + span {
+	display: inline-block;
+}
+
+input[type="password"]:not(:focus) + span {
+	transition: 0.3s transform;
+	-webkit-transition: 0.3s -webkit-transform;
+	-moz-transition: 0.3s -moz-transform;
+	-o-transition: 0.3s -o-transform;
+
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+}
+
+input[type="password"]:focus + span {
+	transition: 0.3s cubic-bezier(0.4, 2.32, 0.55,-0.11) transform;
+	-webkit-transition: 0.3s cubic-bezier(0.4, 2.32, 0.55,-0.11) -webkit-transform;
+	-moz-transition: 0.3s cubic-bezier(0.4, 2.32, 0.55,-0.11) -moz-transform;
+	-o-transition: 0.3s cubic-bezier(0.4, 2.32, 0.55,-0.11) -o-transform;
+
+	transform: scale(1.4);
+	-webkit-transform: scale(1.4);
+	-moz-transform: scale(1.4);
+	-o-transform: scale(1.4);
+}
+
+#photo-albums {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+#photo-albums > header {
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+#photo-albums figure {
+	-webkit-box-flex: 50%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 50%;         /* OLD - Firefox 19- */
+	width: 50%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 50%;          /* Chrome */
+	-ms-flex: 50%;              /* IE 10 */
+	flex: 50%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	margin:auto;
+	width:min-content;
+	position: relative;
+}
+
+#photo-albums figure img {
+	width: 100%;
+}
+
+#photo-albums figure figcaption {
+	text-align: center;
+}
+
+#photo-albums figure svg {
+	width: 16%;
+	height: 21%;
+	margin: auto;
+	position: absolute;
+	top: 0; 
+	left: 0; 
+	bottom: 0; 
+	right: 0;
+	background: rgba(255,255,255,0.5);
+	padding: 3%;
+	border-radius: 70px;
+}
+
+/* Profile picture */
+
+#profile-picture > div figure {
+	margin: 0;
+}
+
+#profile-picture > div img {
+	max-width: 200px;
+	width: 100%;
+	border-radius: 100px;
+
+}
+
+#profile-picture a[role="button"] {
+	margin-top:15px;
+}
+
+.filter-effects {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+.filter-effects header {
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.filter-effects > figure {
+	-webkit-box-flex: 20%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 20%;         /* OLD - Firefox 19- */
+	width: 20%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 20%;          /* Chrome */
+	-ms-flex: 20%;              /* IE 10 */
+	flex: 20%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	width: min-content;
+	margin: auto;
+	text-align: center;
+}
+
+.filter-effects > figure > img {
+	width: 100%;
+}
+
+.filter-effects img:hover {
+	-webkit-filter: none;
+}
+
+.effect-01 img {
+	-webkit-filter: brightness(1.2);
+}
+
+.effect-02 img {
+	-webkit-filter: contrast(1.4) sepia(1);
+}
+
+.effect-03 img {
+	-webkit-filter: saturate(0.2);
+}
+
+.effect-04 img {
+	-webkit-filter: saturate(1.8);
+}
+
+.effect-05 img {
+	-webkit-filter: brightness(1.2) contrast(1.5);
+}
+
+/* Modal */
+
+#photo-section {
+	display: none;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    height: 80%;
+    background: #3B8686;
+    z-index: 20;
+    margin: auto;
+
+    box-shadow:0 0 0 50vmax rgba(0,0,0,.8);
+}
+
+#photo-section:target {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+a[href="#close-section"] {
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    text-align: right;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#photo-section figure {
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+#photo-section figure img {
+	width: 50%;
+	border-radius: 50%;
+	max-width: 500px;
+    min-width: 200px;
+}
+
+/* Find Friends */
+
+#find-friends {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+#find-friends svg {
+	width: 30px;
+	height: 30px;
+	border: 10px solid transparent;
+    background-clip: padding-box;
+    box-sizing: content-box;
+}
+
+#find-friends header {
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+#find-friends header > a {
+	display: block;
+    width: min-content;
+}
+
+#find-friends figure {
+	-webkit-box-flex: 25%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 25%;         /* OLD - Firefox 19- */
+	width: 25%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 25%;          /* Chrome */
+	-ms-flex: 25%;              /* IE 10 */
+	flex: 25%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	margin: auto;
+	width: min-content;
+	margin: 10px 0 10px 0;
+}
+
+#find-friends figure img {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	transition: 0.3s transform, border-radius 0.2s;
+	-webkit-transition: 0.3s -webkit-transform, border-radius 0.2s;
+	-moz-transition: 0.3s -moz-transform, border-radius 0.2s;
+	-o-transition: 0.3s -o-transform, border-radius 0.2s;
+}
+
+#find-friends figure img:hover {
+	border-radius: 50%;
+	transition: 0.3s cubic-bezier(0.4, 2.32, 0.55,-0.11) transform, border-radius 0.2s;
+	-webkit-transition: 0.3s cubic-bezier(0.4, 2.32, 0.55,-0.11) -webkit-transform, border-radius 0.2s;
+	-moz-transition: 0.3s cubic-bezier(0.4, 2.32, 0.55,-0.11) -moz-transform, border-radius 0.2s;
+	-o-transition: 0.3s cubic-bezier(0.4, 2.32, 0.55,-0.11) -o-transform, border-radius 0.2s;
+
+	transform: scale(1.4);
+	-webkit-transform: scale(1.4);
+	-moz-transform: scale(1.4);
+	-o-transform: scale(1.4);
+	z-index: 2;
+}
+
+/* Loader */
+@keyframes loader {
+	to { background-position: -800px 0; }
+}
+
+@-webkit-keyframes loader {
+	to { background-position: -800px 0; }
+}
+
+.loader {
+	background:url(images/loader.png) 0 0;
+	width:100px;
+	height:100px;
+	margin: 0 auto;
+	text-indent:200%;
+	white-space:nowrap;
+	overflow:hidden;
+	animation: loader 2.5s infinite steps(8);
+	-webkit-animation: loader 2.5s infinite steps(8);
+}
+
+/* FOOTER */
+
+footer {
+	height: 220px;
+	clear: both;
+	background: #3B8686;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+
+	justify-content: space-around;
+	-webkit-justify-content: space-around;
+
+	-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+	width: 100%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 100%;          /* Chrome */
+	-ms-flex: 100%;              /* IE 10 */
+	flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	border-top: 6px solid #0B486B;
+
+	align-items: center;
+}
+
+footer ul {
+	padding-left: 0;
+	margin:auto;
+}
+
+footer > nav {
+	margin: auto;
+}
+
+footer ul li {
+	list-style-type: none;
+	margin-top: 5px;
+}
+
+footer ul li a {
+	text-decoration: none;
+	color: white;
+}
+
+footer address {
+	margin:auto;
+}
+
+footer address pre {
+	white-space: pre-line;
+}
+
+/* HAMBURGER */
+a[href="#navigation"],
+a[href="#close"] {
+	display: none;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 60em) {
+	body > label {
+		display: block;
+	}
+
+	/* Hamburger */
+	a[href="#navigation"] {
+		display: block;
+	    text-decoration: none;
+	    color: black;
+	    margin-left: 10px;
+	    margin-top: 10px;
+	}
+
+	a[href="#navigation"] span{
+		width: 31px;
+		height: 3px;
+		background: black;
+		display: block;
+		margin-top: 6px;
+	}
+
+	/* Cross 
+	Source: http://codepen.io/brissmyr/pen/egidw/ 
+	*/
+	a[href="#close"] {
+		display: block;
+		text-decoration: none;
+    	width: 32px;
+		height: 32px;
+		width: 28px;
+    	height: 20px;
+	}
+
+	a[href="#close"]:before, a[href="#close"]:after {
+		position: absolute;
+		left: 15px;
+		content: '';
+		height: 25px;
+		width: 2px;
+		background: white;
+	}
+
+	a[href="#close"]:before {
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+	}
+
+	a[href="#close"]:after {
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+	}
+
+
+	body > header {
+		width: 175px; 
+		overflow: scroll;
+		position: fixed;
+		top: 0;
+		left: -175px;
+		height: 100%;
+		-webkit-transition: left 0.3s ease;
+		-moz-transition: left 0.3s ease;
+		-o-transition: left 0.3s ease;
+		transition: left 0.3s ease;
+	}
+
+	#navigation:target {
+		left:0;
+	}
+
+	main {
+		width: 100%;
+	}
+
+	article {
+		padding: 1% 5% 1% 5%;
+	}
+
+	#photo-section {
+		width: 100%;
+	}
+}
+
+@media (max-width: 35em) {
+	form[method='post'] > fieldset > label > span {
+		display: block;
+	}
+
+	#photo-albums figure {
+		-webkit-box-flex: 100%;      /* OLD - iOS 6-, Safari 3.1-6 */
+		-moz-box-flex: 100%;         /* OLD - Firefox 19- */
+		width: 100%;               /* For old syntax, otherwise collapses. */
+		-webkit-flex: 100%;          /* Chrome */
+		-ms-flex: 100%;              /* IE 10 */
+		flex: 100%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+		margin-bottom: 20px;
+	}
+
+	.filter-effects > figure {
+		flex: 50%;
+	}
+
+	#find-friends figure {
+		-webkit-box-flex: 50%;      /* OLD - iOS 6-, Safari 3.1-6 */
+		-moz-box-flex: 50%;         /* OLD - Firefox 19- */
+		width: 50%;               /* For old syntax, otherwise collapses. */
+		-webkit-flex: 50%;          /* Chrome */
+		-ms-flex: 50%;              /* IE 10 */
+		flex: 50%;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	}
+
+	footer {
+		-webkit-flex-flow: row wrap;
+		flex-flow: column wrap;
+		padding: 10px 0px 10px 0px;
+		height: auto;
+	}
+
+	footer nav,
+	footer address,
+	footer ul  {
+		width: 200px;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+}
