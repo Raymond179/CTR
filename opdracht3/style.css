@@ -33,6 +33,11 @@ body {
 	flex-flow: row wrap;
 }
 
+h3 {
+	font-size: 1em;
+	font-weight: normal;
+}
+
 button,
 a[role="button"] {
 	background: #0B486B;
@@ -148,10 +153,6 @@ body > header > nav svg {
 /* MAIN */
 main {
 	width: 80%;
-	-webkit-transition: margin ease-out 0.7s;
-    -moz-transition: margin ease-out 0.7s;
-    -o-transition: margin ease-out 0.7s;
-    transition: margin ease-out 0.7s;
 
     -webkit-box-flex: 80%;      /* OLD - iOS 6-, Safari 3.1-6 */
 	-moz-box-flex: 80%;         /* OLD - Firefox 19- */
@@ -171,7 +172,14 @@ main h2 {
 }
 
 article {
-	padding: 1% 15% 1% 15%;
+	padding: 2% 5% 2% 5%;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	border: 1px dashed #3B8686;
+	border-bottom: 4px solid #0B486B;
+	border-top: 0;
+	background: #F5F5F5;
 }
 
 article:nth-of-type(even) {
@@ -352,8 +360,6 @@ input[type=checkbox]:checked + label:before {
 #profile-picture > div img {
 	max-width: 200px;
 	width: 100%;
-	border-radius: 100px;
-
 }
 
 #profile-picture a[role="button"] {
@@ -672,8 +678,7 @@ a[href="#close"] {
 		display: block;
 	    text-decoration: none;
 	    color: black;
-	    margin-left: 10px;
-	    margin-top: 10px;
+	    margin: 10px;
 	}
 
 	a[href="#navigation"] span{
@@ -749,6 +754,8 @@ a[href="#close"] {
 
 	article {
 		padding: 1% 5% 1% 5%;
+		border: none;
+		border-bottom: 4px solid #3B8686;
 	}
 
 	#photo-section {
@@ -775,6 +782,7 @@ a[href="#close"] {
 	#profile-picture > div {
 		width: 100%;
 		float: none;
+		margin-top: 20px;
 	}
 
 	.filter-effects > figure {
