@@ -10,3 +10,7 @@ http://raymondkorrel.github.io/CTR/opdracht2/
 
 Shortlink:
 http://ow.ly/Yd5f3
+
+Opdracht 3 - Week 3:
+http://raymondkorrel.github.io/CTR/opdracht3/
+
